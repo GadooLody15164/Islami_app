@@ -84,7 +84,6 @@ class _AhadethTabState extends State<AhadethTab> {
       )
     ]);
   }
-
   LoadHadethFile() {
     rootBundle.loadString("assets/files/ahadeth.txt").then((value) {
       List<String> ahadeth = value.split("#");
