@@ -36,6 +36,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.3
+  google_fonts: ^6.2.1
+  provider: ^6.1.2
+  dartz: ^0.10.1
+  http: ^1.2.2
+  audioplayers: ^6.1.0
+  easy_localization: ^3.0.7
+
 
 dev_dependencies:
   flutter_test:
@@ -58,11 +65,11 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-
+    - assets/files/
+    - assets/translations/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
