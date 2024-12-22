@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/home/hadeth_details.dart';
+import 'package:islami_app/home/tabs/hadeth/hadeth_details.dart';
 import 'package:islami_app/home/home.dart';
-import 'package:islami_app/home/my_theme.dart';
+import 'package:islami_app/home/theme/my_theme.dart';
 import 'package:islami_app/home/provider/my_provider.dart';
 import 'package:islami_app/home/provider/sura_details_provider.dart';
-import 'package:islami_app/home/tabs/settings.dart';
-import 'package:islami_app/sura_details.dart';
+import 'package:islami_app/home/tabs/settings/settings.dart';
+import 'package:islami_app/home/tabs/quran/sura_details.dart';
 import 'package:provider/provider.dart';
 void main() {
   runApp(MultiProvider(
