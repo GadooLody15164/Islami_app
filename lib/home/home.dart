@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/home/provider/my_provider.dart';
@@ -50,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             centerTitle: true,
             backgroundColor: Colors.transparent,
-            title: Text("Islami", style: Theme.of(context).textTheme.bodyLarge),
+            title: Text("islami".tr(), style: Theme.of(context).textTheme.bodyLarge),
           ),
           body: tabs[selectedindex],
         ),
