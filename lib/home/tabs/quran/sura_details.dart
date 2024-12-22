@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/home/theme/my_theme.dart';
 import 'package:islami_app/home/provider/sura_details_provider.dart';
-import 'package:islami_app/sura_model.dart';
+import 'package:islami_app/models/sura_model/sura_model.dart';
 import 'package:provider/provider.dart';
 
-import 'home/provider/my_provider.dart';
+import '../../provider/my_provider.dart';
 
 class SuraDetailsScreen extends StatelessWidget {
   static const String routeName = "suraDetails";
@@ -19,10 +20,13 @@ class SuraDetailsScreen extends StatelessWidget {
         create: (context) => SuraDetailsProvider()..loadSuraFile(model.index),
         builder: (context, child) {
           var provider = Provider.of<SuraDetailsProvider>(context);
-         return Container(
+          var mainProvider = Provider.of<MyProvider>(context);
+          return Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/images/main_bg.png")),
+                  image: AssetImage(mainProvider.mode == ThemeMode.light
+                      ? "assets/images/main_bg.png"
+                      : "assets/images/main_dark_bg.png")),
             ),
             child: Scaffold(
               appBar: AppBar(
@@ -32,7 +36,9 @@ class SuraDetailsScreen extends StatelessWidget {
               ),
               body: Card(
                 margin: EdgeInsets.all(12),
-                color: Color(0x80B7935F),
+                color: mainProvider.mode == ThemeMode.light
+                    ? Color(0x9BA88B60)
+                    : MyThemeData.primaryDarkColor,
                 elevation: 4,
                 shape: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.transparent),
@@ -54,9 +60,12 @@ class SuraDetailsScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         textDirection: TextDirection.rtl,
                         style: GoogleFonts.inter(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white),
+                          fontSize: 25,
+                          fontWeight: FontWeight.w400,
+                          color: mainProvider.mode == ThemeMode.light
+                              ? Colors.white
+                              : MyThemeData.goldColor,
+                        ),
                       );
                     },
                     itemCount: provider.verses.length,

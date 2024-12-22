@@ -1,13 +1,15 @@
 import 'dart:convert';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:islami_app/radio/radio_item.dart';
+import 'package:islami_app/home/tabs/radio/radio_item.dart';
 import 'package:http/http.dart' as http;
-import 'package:islami_app/radio/radio_model.dart';
+import 'package:islami_app/models/radio_model/radio_model.dart';
 
 class RadioTab extends StatelessWidget {
   RadioTab({super.key});
-  final player=AudioPlayer();
+
+  final player = AudioPlayer();
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -19,6 +21,9 @@ class RadioTab extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset("assets/images/radio_image.png"),
+                SizedBox(
+                  height: 30,
+                ),
                 Text("اذاعة القرأن الكريم "),
                 SizedBox(
                   height: 50,
