@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/home/bottom_sheets/language_bottomsheet.dart';
 import 'package:islami_app/home/bottom_sheets/theme_bottomsheet.dart';
@@ -15,7 +16,7 @@ class SettingsTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Theme"),
+          Text("theme".tr()),
           SizedBox(
             height: 12,
           ),
@@ -36,13 +37,13 @@ class SettingsTab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(22),
                 border: Border.all(color: MyThemeData.primaryColor),
               ),
-              child: Text("Light"),
+              child: Text("light".tr()),
             ),
           ),
           SizedBox(
             height: 44,
           ),
-          Text("Language"),
+          Text("language".tr()),
           SizedBox(
             height: 12,
           ),
@@ -63,7 +64,7 @@ class SettingsTab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(22),
                 border: Border.all(color: MyThemeData.primaryColor),
               ),
-              child: Text("Arabic"),
+              child: Text("arabic".tr()),
             ),
           ),
         ],

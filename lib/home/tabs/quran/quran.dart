@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/home/theme/my_theme.dart';
@@ -143,7 +144,7 @@ class _QuranTabState extends State<QuranTab> {
           thickness: 3,
         ),
         Text(
-          "Sura Names",
+          "sura_name".tr(),
           textAlign: TextAlign.center,
           style:Theme.of(context).textTheme.bodyMedium
         ),

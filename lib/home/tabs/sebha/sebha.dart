@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/home/theme/my_theme.dart';
@@ -25,15 +26,13 @@ class _SebhaTabState extends State<SebhaTab> {
     }
     setState(() {});
   }
-
   List<String> tasbeh = [
-    "سبحان الله",
-    "الحمد الله",
-    "لا اله الا الله",
-    " الله اكبر",
-    " لا حول ولا قوة الا بالله",
+    "praise God".tr(),
+    "thank God".tr(),
+    "no god but Allah".tr(),
+    "allah is the greatest".tr(),
+    "no power nor strength except allah".tr(),
   ];
-
   @override
   Widget build(BuildContext context) {
     var mainProvider = Provider.of<MyProvider>(context);
@@ -62,7 +61,7 @@ class _SebhaTabState extends State<SebhaTab> {
               ),
             ],
           ),
-          Text("عدد التسبيحات "),
+          Text("praises".tr()),
           SizedBox(
             height: 10,
           ),
@@ -94,7 +93,7 @@ class _SebhaTabState extends State<SebhaTab> {
                 MyThemeData.goldColor
             ),
             child: Text(
-              tasbeh[index],
+              tasbeh[index].tr(),
               style: GoogleFonts.inter(color:mainProvider.mode==ThemeMode.light?
               Colors.white:Colors.black),
             ),

@@ -1,11 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/home/theme/my_theme.dart';
 import 'package:islami_app/home/provider/my_provider.dart';
 import 'package:provider/provider.dart';
-
 class ThemeBottomsheet extends StatelessWidget {
   const ThemeBottomsheet({super.key});
-
   @override
   Widget build(BuildContext context) {
     var pro = Provider.of<MyProvider>(context);
@@ -19,12 +18,13 @@ class ThemeBottomsheet extends StatelessWidget {
             InkWell(
               onTap: () {
                 pro.changeTheme(ThemeMode.light);
+                Navigator.pop(context);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Light",
+                    "light".tr(),
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium
@@ -44,11 +44,12 @@ class ThemeBottomsheet extends StatelessWidget {
             InkWell(
               onTap: () {
                 pro.changeTheme(ThemeMode.dark);
+                Navigator.pop(context);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Dark"),
+                  Text("dark".tr()),
                   // Icon(Icons.done),
                 ],
               ),
